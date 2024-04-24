@@ -10,11 +10,6 @@
   </p>
 
   <p>
-    <strong>Integer:</strong>
-    <%= recipe.integer %>
-  </p>
-
-  <p>
     <strong>Prep time:</strong>
     <%= recipe.prep_time %>
   </p>
@@ -40,8 +35,7 @@
   </p>
 
   <p>
-    <strong>Image url:</strong>
-    <%= recipe.image_url %>
+    <strong>Image:</strong>
+    <img src="<%= recipe.image_url %>" alt="Recipe Image" class="img-fixed-size">
   </p>
-
 </div>

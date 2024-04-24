@@ -1,0 +1,13 @@
+<h1>Insert up to 5 ingrediets here to find our top recomandations for you!</h1>
+
+<%= form_tag(recipes_search_path, method: "get") do %>
+    <% 5.times do |i| %>
+      <div>
+        <%= label_tag "ingredients[]", "Ingredient #{i+1}:" %>
+        <%= text_field_tag "ingredients[]", nil, placeholder: "Enter ingredient #{i+1}" %>
+      </div>
+    <% end %>
+    <%= submit_tag "Search Recipes" %>
+<% end %>
+  
+

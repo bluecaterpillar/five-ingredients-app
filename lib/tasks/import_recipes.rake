@@ -17,11 +17,11 @@ namespace :db do
                 image_url: recipe_data["image"]
             )
 
-            recipe_data["ingredients"].each do |ingredient_string|
+            recipe_data["ingredients"].each_with_index do |ingredient_string, i|
                 parsed = parse_ingredient(ingredient_string)
                 next if parsed.nil?
 
-                ingredient = Ingredient.find_or_create_by(name: parsed[:name])
+                ingredient = Ingredient.find_or_create_by(name: parsed[:name] ? parsed[:name] : "Unknown Ingredient_#{i}")
                 RecipeIngredient.create(
                     recipe: recipe,
                     ingredient: ingredient,

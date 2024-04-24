@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .img-fixed-size {
+    width: 300px;  /* or 100% for responsive design */
+    height: 200px;
+    object-fit: cover;  /* This property ensures the image covers the area of the box, useful for maintaining aspect ratio */
+  }

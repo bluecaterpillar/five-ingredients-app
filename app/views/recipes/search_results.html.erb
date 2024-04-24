@@ -1,0 +1,26 @@
+<h1>Search Results</h1>
+<div>
+    <%= link_to 'Back to search', root_path %>
+</div>
+
+<% if @recipes.any? %>
+  <% @recipes.each do |recipe| %>
+    <div>
+      <h2><%= recipe.name %></h2>
+      <ul>
+        <% recipe.ingredients.each do |ingredient| %>
+          <li><%= ingredient.name %></li>
+        <% end %>
+      </ul>
+      <p>
+        <img src="<%= recipe.image_url %>" alt="Recipe Image" class="img-fixed-size">
+      </p>
+    </div>
+  <% end %>
+<% else %>
+  <p>No recipes found matching your criteria.</p>
+<% end %>
+
+<div>
+    <%= link_to 'Back to search', root_path %>
+</div>
