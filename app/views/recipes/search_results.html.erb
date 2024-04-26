@@ -1,26 +1,47 @@
 <h1>Search Results</h1>
-<div>
-    <%= link_to 'Back to search', root_path %>
+<div class="recipes-list">
+    <%= link_to 'Back to search', home_path %>
 </div>
-
-<% if @recipes.any? %>
-  <% @recipes.each do |recipe| %>
-    <div>
-      <h2><%= recipe.name %></h2>
-      <ul>
-        <% recipe.ingredients.each do |ingredient| %>
-          <li><%= ingredient.name %></li>
+<div class="recipes-list">
+    <% if @recipes.any? %>
+        <% @recipes.each do |recipe| %>
+            <div class="recipe-box">
+                <h3><%= recipe.name %></h3>
+                <ul>
+                    <% if recipe.cook_time %>
+                        <li><b>Cook Time:</b> <%= recipe.cook_time %></li>
+                    <% end %>
+                    <% if recipe.prep_time.present? %>
+                        <li><b>Preparation Time:</b>  <%= recipe.prep_time %></li>
+                    <% end %>
+                    <% if recipe.ratings.present? %>
+                        <li><b>Rating:</b>  <%= recipe.ratings %></li>
+                    <% end %>
+                    <% if recipe.cuisine.present? %>
+                        <li><b>Cuisine:</b>  <%= recipe.cuisine %></li>
+                    <% end %>
+                    <% if recipe.category.present? %>
+                        <li><b>Category:</b>  <%= recipe.category %></li>
+                    <% end %>
+                    <% if recipe.author.present? %>
+                        <li><b>Author:</b>  <%= recipe.author %></li>
+                    <% end %>
+                </ul>    
+                <h4>Ingredients</h4>
+                <ul>
+                    <% recipe.recipe_ingredients.each do |recipe_ingredient| %>
+                        <li><%= recipe_ingredient.quantity %> <%= recipe_ingredient.unit %> <%= recipe_ingredient.ingredient.name %> <%= recipe_ingredient.notes %></li>
+                    <% end %>    
+                </ul>
+                <p>
+                    <img src="<%= recipe.image_url %>" alt="Recipe Image" class="recipe-image">
+                </p>
+            </div>
         <% end %>
-      </ul>
-      <p>
-        <img src="<%= recipe.image_url %>" alt="Recipe Image" class="img-fixed-size">
-      </p>
-    </div>
-  <% end %>
-<% else %>
-  <p>No recipes found matching your criteria.</p>
-<% end %>
-
+    <% else %>
+        <p>No recipes found matching your criteria.</p>
+    <% end %>
+</div>
 <div>
-    <%= link_to 'Back to search', root_path %>
+    <%= link_to 'Back to search', home_path %>
 </div>

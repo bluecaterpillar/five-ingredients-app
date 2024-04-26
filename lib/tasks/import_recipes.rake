@@ -37,7 +37,8 @@ namespace :db do
 
     def parse_ingredient(ingredient_string)
         # Updated regex handling special cases
-        match = ingredient_string.match(/^(?<quantity>[\d\s\/½⅓⅔¼¾]+)?\s*(?<unit>(?!(?:eggs?|bananas?|ripe banana)\b)[a-z.]+)?\s*(?<name>[^,]+)(,\s*(?<notes>.+))?$/i)
+        match = ingredient_string.match(/^(?<quantity>\d+\s*[½⅓⅔¼¾]?|\d+\/\d+)?\s*(?<unit>(?!(?:eggs?|bananas?|ripe banana)\b)[a-z.]+)?\s*(?<name>[^,]+)(,\s*(?<notes>.+))?$/i)
+
         return nil unless match
 
         {

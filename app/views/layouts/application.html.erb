@@ -12,6 +12,16 @@
   </head>
 
   <body>
+    <header>
+      <h1>The Five Ingredients App</h1>
+    </header>
     <%= yield %>
+    <footer>
+      <form action="<%= run_rake_path %>" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <button type="submit">Seed your database!</button>
+        <p>By Diego Carrea.</p>
+      </form>
+    </footer>
   </body>
 </html>
