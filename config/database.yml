@@ -80,5 +80,5 @@ test:
 production:
   <<: *default
   database: five_ingredients_app_production
-  username: root
-  password:
+  username: five_ingredients_app
+  password: <%= ENV["FIVE_INGREDIENTS_APP_DATABASE_PASSWORD"] %>
