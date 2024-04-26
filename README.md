@@ -1,25 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# This is the Five Ingredients App
 
-Things you may want to cover:
+To use this simple Rails app you need to:
 
-* Ruby version
+* Install both Ruby and Rails in your system (if you don't have them already).
+* Clone this git repo.
+* Spin the rails server from the command line (from the repo folder).
+* Navigate to your localhost: http://localhost:3000/
+* From the home page, hit the "Seed your database!" button and wait 3 to 5 minutes for it to seed with more than 10k recipes in English.
+* Start using the app, inserting up to 5 ingredients.
+* Enjoy!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# five-ingredients-app
+By Diego Carrea.
