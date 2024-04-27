@@ -8,7 +8,9 @@ To use this simple Rails app you need to:
 * Clone this git repo.
 * Spin the rails server from the command line (from the repo folder).
 * Navigate to your localhost: http://localhost:3000/
-* From the home page, hit the "Seed your database!" button and wait 3 to 5 minutes for it to seed with more than 10k recipes in English.
+* From the command line run:
+* * rake db:import_recipes, then wait 3 to 5 minutes for it to seed with more than 10k recipes in English.
+* * rails db:drop db:create db:migrateand instead, if you need to drop and recreate your local DB before importing again.
 * Start using the app, inserting up to 5 ingredients.
 * Enjoy!
 
